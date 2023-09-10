@@ -9,8 +9,10 @@ print('''
 -----------------------------''')
 
 yataza = 0
-# ta input av användare
-while yataza != ('DIV','SUB','ADD','MUL'):
+
+yeeho = 0
+
+while True:
     yataza = input('Select Yatzy > ')
     try:
         yataza = float(yataza)
@@ -19,26 +21,48 @@ while yataza != ('DIV','SUB','ADD','MUL'):
     except ValueError:
         yataza = yataza.upper()
         if yataza == 'ADD':
-            print('ofan')
-    # try:
-    #     yataza = str(yataza)
-    #     yataza = yataza.upper()
-    #     if yataza == 'ADD':
-    #         yataza = 'ADD'
-    #         print('hej kom och hjälp mig!!')
-    #     elif yataza == 'SUB':
-    #         yataza = 'SUB'
-    #     elif yataza == 'MUL':
-    #         yataza = 'MUL'
-    #     elif yataza == 'DIV':
-    #         yataza = 'DIV'
-    # except ValueError:
-    #     print('invalid yatza')
-# kolla om det är div hej hå
-# ta mer input
+            break
+        elif yataza == 'SUB':
+            break
+        elif yataza == 'DIV':
+            break
+        elif yataza == 'MUL':
+            break
+        else:
+            print('inte räknesätt yataza')
+    
 
-# gör om till float
 
-# skriv ut summan 
- 
-#  fixa valueerror och zerodiv error
+while True:
+    a = input('Frst num > ')
+    try:
+        a = float(a)
+        break
+    except ValueError:
+        print ('invalid num')
+
+while True:
+    b = input('second num > ')
+    try:
+        b = float(b)
+        break
+    except ValueError:
+        print('invalid num')
+
+svar = 0
+
+
+if yataza == 'ADD':
+    svar = a + b
+elif yataza == 'SUB':
+    svar = a - b
+elif yataza == 'DIV':
+    try:
+        svar = a/b
+    except ZeroDivisionError:
+        svar = 'NaN'
+elif yataza == 'MUL':
+    svar = a * b
+    
+
+print('SVARET ÄR = ' + str(svar))
