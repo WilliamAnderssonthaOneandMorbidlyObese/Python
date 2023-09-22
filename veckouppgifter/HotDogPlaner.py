@@ -42,16 +42,16 @@ while True:
     else:
         break
 
-meatcmb = ((meatcub * 3) + (meatsqr * 2)) / 8
+meatcmb = (meatcub*3 + meatsqr*2) / 8
 vegancmb = ((vegansqr * 2) + (vegancub * 3)) / 4
 
-meatamt = (math.ceil(meatcmb))
-veganamt = (math.ceil(vegancmb))
+meatamt = math.ceil(meatcmb)
+veganamt = math.ceil(vegancmb)
 
 festis = meatcub + meatsqr + vegancub + vegansqr
 
-meatkr = (meatamt * 20.95)
-vegankr = (veganamt * 34.95)
+meatkr = meatamt * 20.95
+vegankr = veganamt * 34.95
 festkr = (festis * 13.95)
 
 print('-------------------------')

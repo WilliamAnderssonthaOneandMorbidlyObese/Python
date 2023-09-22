@@ -10,24 +10,31 @@ print('''
 operation = 0
 result = 0
 
-while True:
+# while True:
+#     operation = input('Select Operation > ')
+#     try:
+#         operation = float(operation)
+#         print('ERROR: Not an Operation')
+
+#     except ValueError:
+#         operation = operation.upper()
+#         if operation == 'ADD':
+#             break
+#         elif operation == 'SUB':
+#             break
+#         elif operation == 'DIV':
+#             break
+#         elif operation == 'MUL':
+#             break
+#         else:
+#             print('ERROR: Not an Operation')
+
+while operation != (('ADD'), ('SUB'), ('DIV'), ('MUL')):
     operation = input('Select Operation > ')
-    try:
-        operation = float(operation)
-        print('ERROR: Not an Operation')
-    
-    except ValueError:
-        operation = operation.upper()
-        if operation == 'ADD':
-            break
-        elif operation == 'SUB':
-            break
-        elif operation == 'DIV':
-            break
-        elif operation == 'MUL':
-            break
-        else:
-            print('ERROR: Not an Operation')
+    operation = operation.upper()
+    if operation != 'ADD':
+        print('ERROR: Not a Operation')
+
 print('-----------------------------')
 while True:
     num1 = input('First Number > ')

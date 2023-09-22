@@ -4,13 +4,15 @@ print("""
 Search of the day!
 female, brown, brown
 ------------------""")
-gender = input('Gender: ')
+      
+gender = input('Gender: ').uppeer()
 hair = input('Hair Color: ')
 eye = input('Eye Color: ')
+
 print('------------------')
 nomatch = 'NO MATCH :('
 
-if (gender.upper()) == 'MALE':
+if gender.upper() == 'MALE':
     if (hair.upper()) == 'BROWN':
         if (eye.upper()) == 'BROWN':
             print('MATCH: Daniel Radcliffe')
@@ -28,7 +30,6 @@ if (gender.upper()) == 'MALE':
     else:
         print(nomatch)
     
-
 elif (gender.upper()) =='FEMALE':
     if (hair.upper()) == 'BROWN':
         if (eye.upper()) =='BROWN':
