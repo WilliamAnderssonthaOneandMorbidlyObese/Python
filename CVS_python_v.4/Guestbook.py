@@ -1,28 +1,41 @@
 import os
 import json
 
+# LÄS IN GÄSTBOK FRÅN FIL
 f = open('guestbook.json')
 guestbook = f.read()
 guestbook = json.loads(guestbook)
 f.close()
 
-guestbook = ['Hej', 'Crille was here', 'Hejdå']
+while True:  # bryts när användaren matar in 'exit'
 
-while True:
-    os.system('cls')
-    print('\n.: THE GUESTBOOK :.\n---------')
+    # RENSA TERMINALFÖNSTER
+    if os.name == 'nt':
+        os.system('cls')
+    elif os.name == 'posix':
+        os.system('clear')
+
+    # SKRIV UT HEADER
+    print('.: The Guestbook :.')
+    print(19 * '-')
+
+    # SKRIV UT GÄSTBOKENS INLÄGG
     for entry in guestbook:
         print(entry)
-        print('----------')
-    entry = input('NYTT INLÄGG--')
+        print(19 * '-')
 
-    if entry == 'exit':
+    # HÄMTA INLÄGG FRÅN ANVÄNDARE
+    entry = input('NYTT INLÄGG > ')
+
+    # BRYT LOOPEN OM ANVÄNDAREN MATAR IN 'exit'
+    if entry.lower() == 'exit':
         break
 
+    # LÄGG TILL INLÄGG TILL GÄSTBOK
     guestbook.append(entry)
-    f.open('guestbook.json', 'w')
-    guestbook = json.dumps(guestbook)
-    f.write(guestbook)
-    f.close
-with open("filename.dat") as file:
-    print(file)
+
+# SKRIV GÄSTBOK TILL FIL
+f = open('guestbook.json', 'w')
+guestbook = json.dumps(guestbook)
+f.write(guestbook)
+f.close()
