@@ -1,7 +1,3 @@
-'''head notes:
-Du har inte fixar en snygg ui med mer än 10 items i check och delete
-ditt dumma pap loadar man två gånger i rad dubblar man listan'''
-
 
 # import libraries
 import os
