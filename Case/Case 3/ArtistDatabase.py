@@ -35,11 +35,14 @@ def view():
     else:
         ui.error(nameinput,True)
 
+def clearnprint():
+    clear()
+    ui.main()
+    ui.select()
+
 select = {'v':view,'l':list }
 
-clear()
-ui.main()
-ui.select()
+clearnprint()
 while True:
     selection = input('| Selection > ').lower()
     if selection in select:
@@ -49,11 +52,8 @@ while True:
         ui.select()
     elif selection == 'e':
         clear()
-        print('\nScript exited successfully!')
+        print('\nSUCCESS: Script exited successfully!')
         break
     else:
         ui.error(selection)
-        clear()
-        ui.main()
-        ui.select() 
-        
+        clearnprint()
